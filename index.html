@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAR美幸 - 新潟県見附市の上質なバー | 20:00〜0:00営業</title>
+    <meta name="description" content="新潟県見附市にあるBAR美幸。落ち着いた大人の空間で、厳選されたお酒と心のこもったサービスをお楽しみください。火〜土曜日20:00〜0:00営業。">
+    <meta name="keywords" content="BAR美幸,バー,見附市,新潟,カクテル,ウイスキー,大人の空間">
+    <meta name="author" content="BAR美幸">
+    <meta property="og:title" content="BAR美幸 - 新潟県見附市の上質なバー">
+    <meta property="og:description" content="落ち着いた大人の空間で、厳選されたお酒と心のこもったサービスをお楽しみください。">
+    <meta property="og:type" content="website">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Serif JP', 'Cormorant Garamond', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #f4f4f4;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        /* ヘッダー */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 1rem 0;
+            z-index: 1000;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', 'Noto Serif JP', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #d4af37;
+            text-decoration: none;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-image {
+            height: 40px;
+            width: auto;
+            border-radius: 5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
+            color: #f4f4f4;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #d4af37;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #f4f4f4;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ヒーローセクション */
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+                        url('./images/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', 'Noto Serif JP', serif;
+            font-size: 4.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: #d4af37;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #f4f4f4;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
+            display: inline-block;
+            background: linear-gradient(45deg, #d4af37, #f4e189);
+            color: #1a1a1a;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* セクション共通スタイル */
+        .section {
+            padding: 5rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', 'Noto Serif JP', serif;
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #d4af37;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* About セクション */
+        .about-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a1810 100%);
+        }
+
+        .about-grid {
+            display: block;
+            margin-bottom: 3rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-intro {
+            margin-bottom: 2rem;
+        }
+
+        .mama-section {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            background: rgba(212, 175, 55, 0.05);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            margin-top: 3rem;
+            max-width: 100%;
+        }
+
+        .mama-image-container {
+            flex-shrink: 0;
+        }
+
+        .mama-image {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #d4af37;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .mama-intro h3 {
+            font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
+            color: #d4af37;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .mama-intro p {
+            color: #f4f4f4;
+            font-style: italic;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        /* Instagram セクション */
+        .instagram-section {
+            background: linear-gradient(135deg, #2a1810 0%, #1a1a1a 100%);
+            text-align: center;
+        }
+
+        .instagram-container {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .instagram-intro p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #f4f4f4;
+            margin-bottom: 1rem;
+        }
+
+        .instagram-embed {
+            background: rgba(212, 175, 55, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .instagram-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .instagram-link:hover {
+            color: #f4e189;
+        }
+
+        .instagram-link i {
+            font-size: 1.3rem;
+        }
+
+        /* Info セクション */
+        .info-section {
+            background: #1a1a1a;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card i {
+            font-size: 2rem;
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+
+        .info-card h3 {
+            font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
+            color: #d4af37;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* メニューセクション */
+        .menu-section {
+            background: linear-gradient(135deg, #2a1810 0%, #1a1a1a 100%);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-category {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .menu-category h3 {
+            font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
+            color: #d4af37;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 1.4rem;
+            letter-spacing: 0.5px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 0;
+        }
+
+        .menu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .menu-price {
+            color: #d4af37;
+            font-weight: 600;
+        }
+
+        /* 決済方法セクション */
+        .payment-section {
+            background: #1a1a1a;
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .payment-method {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .payment-method i {
+            font-size: 1.5rem;
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+        }
+
+        /* アクセスセクション */
+        .access-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a1810 100%);
+        }
+
+        .access-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .access-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .access-item {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .access-item i {
+            font-size: 1.5rem;
+            color: #d4af37;
+            min-width: 30px;
+        }
+
+        .access-item h3 {
+            font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .access-item p {
+            color: #f4f4f4;
+            line-height: 1.6;
+        }
+
+        .map-container {
+            overflow: hidden;
+        }
+
+        /* コンタクトセクション */
+        .contact-section {
+            background: linear-gradient(135deg, #2a1810 0%, #1a1a1a 100%);
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item i {
+            color: #d4af37;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* フッター */
+        .footer {
+            background: #000;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* アニメーション */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.95);
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .mama-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+                padding: 2rem 1.5rem;
+                margin-top: 2rem;
+            }
+
+            .mama-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .access-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="./images/logo.png" alt="BAR美幸ロゴ" class="logo-image">
+                BAR 美幸
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#instagram">Instagram</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#info">Info</a></li>
+                    <li><a href="#access">Access</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="recruit.html">Recruit</a></li>
+                </ul>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">BAR 美幸</h1>
+            <p class="hero-subtitle">上質な時間をお届けするプレミアムバー</p>
+            <p class="hero-description">
+                落ち着いた大人の空間で、厳選されたお酒と心のこもったサービスをお楽しみください。<br>
+                特別な夜を演出いたします。
+            </p>
+            <a href="#about" class="cta-button">詳しく見る</a>
+        </div>
+    </section>
+
+    <!-- About セクション -->
+    <section id="about" class="about-section section">
+        <h2 class="section-title">About BAR 美幸</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <div class="about-intro">
+                    <p>BAR美幸は、新潟県見附市に位置する上質なバーです。暖かみのある木目の内装と赤い革張りのカウンターが特徴的な、大人の為の落ち着いた空間を提供しています。</p>
+                    <br>
+                    <p>経験豊富なバーテンダーが、お客様一人ひとりに合わせたお酒をご提案し、特別な時間をお過ごしいただけます。仕事帰りの一杯から、大切な方との特別な夜まで、様々なシーンでご利用ください。</p>
+                </div>
+            </div>
+        </div>
+        <div class="mama-section">
+            <div class="mama-image-container">
+                <img src="./images/mama.jpg" alt="BAR美幸のママ" class="mama-image">
+            </div>
+            <div class="mama-intro">
+                <h3>ママからのメッセージ</h3>
+                <p>「一人でも、お友達とでも、どなたでもお気軽にお越しください。心を込めてお迎えいたします。」</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram セクション -->
+    <section id="instagram" class="instagram-section section">
+        <h2 class="section-title">Instagram</h2>
+        <div class="instagram-container">
+            <div class="instagram-intro">
+                <p>BAR美幸の日常や特別なひとときをInstagramでご紹介しています。</p>
+                <p>お店の雰囲気や新着情報をお楽しみください。</p>
+            </div>
+            <div class="instagram-embed">
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C9NFnODyJjE" data-instgrm-version="12" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:undefinedpx;height:undefinedpx;max-height:100%; width:undefinedpx;"><div style="padding:16px;"> <a id="main_link" href="p/C9NFnODyJjE" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;"> View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/C9NFnODyJjE/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Shared post</a> on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;">Time</time></p></div></blockquote><script async src="https://www.instagram.com/embed.js"></script><div style="overflow: auto; position: absolute; height: 0pt; width: 0pt;"><a href="https://instaembedcode.com/">Instagram embed</a></div></div><style>.boxes3{height:175px;width:153px;} #n img{max-height:none!important;max-width:none!important;background:none!important} #inst i{max-height:none!important;max-width:none!important;background:none!important}</style>
+            <a href="https://www.instagram.com/bar_miyuki/" target="_blank" class="instagram-link">
+                <i class="fab fa-instagram"></i>
+                @bar_miyuki をフォロー
+            </a>
+</div>
+        </div>
+    </section>
+
+    <!-- メニューセクション -->
+    <section id="menu" class="menu-section section">
+        <h2 class="section-title">Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-category">
+                <h3><i class="fas fa-wine-bottle"></i> ウイスキー</h3>
+                <div class="menu-item">
+                    <span>山崎12年</span>
+                    <span class="menu-price">¥2,500</span>
+                </div>
+                <div class="menu-item">
+                    <span>響21年</span>
+                    <span class="menu-price">¥8,000</span>
+                </div>
+                <div class="menu-item">
+                    <span>マッカラン18年</span>
+                    <span class="menu-price">¥4,500</span>
+                </div>
+                <div class="menu-item">
+                    <span>ジョニーウォーカー ブルー</span>
+                    <span class="menu-price">¥3,200</span>
+                </div>
+            </div>
+            <div class="menu-category">
+                <h3><i class="fas fa-cocktail"></i> カクテル</h3>
+                <div class="menu-item">
+                    <span>マティーニ</span>
+                    <span class="menu-price">¥1,200</span>
+                </div>
+                <div class="menu-item">
+                    <span>ネグローニ</span>
+                    <span class="menu-price">¥1,100</span>
+                </div>
+                <div class="menu-item">
+                    <span>オールドファッションド</span>
+                    <span class="menu-price">¥1,300</span>
+                </div>
+                <div class="menu-item">
+                    <span>美幸スペシャル</span>
+                    <span class="menu-price">¥1,500</span>
+                </div>
+            </div>
+            <div class="menu-category">
+                <h3><i class="fas fa-beer"></i> ビール・その他</h3>
+                <div class="menu-item">
+                    <span>プレミアム生ビール</span>
+                    <span class="menu-price">¥800</span>
+                </div>
+                <div class="menu-item">
+                    <span>ワイン（グラス）</span>
+                    <span class="menu-price">¥900〜</span>
+                </div>
+                <div class="menu-item">
+                    <span>日本酒</span>
+                    <span class="menu-price">¥1,000〜</span>
+                </div>
+                <div class="menu-item">
+                    <span>ノンアルコールカクテル</span>
+                    <span class="menu-price">¥600</span>
+                </div>
+            </div>
+            <div class="menu-category">
+                <h3><i class="fas fa-utensils"></i> おつまみ</h3>
+                <div class="menu-item">
+                    <span>ナッツ盛り合わせ</span>
+                    <span class="menu-price">¥500</span>
+                </div>
+                <div class="menu-item">
+                    <span>チーズプラッター</span>
+                    <span class="menu-price">¥1,200</span>
+                </div>
+                <div class="menu-item">
+                    <span>スモークサーモン</span>
+                    <span class="menu-price">¥1,000</span>
+                </div>
+                <div class="menu-item">
+                    <span>生ハム</span>
+                    <span class="menu-price">¥900</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 営業情報セクション -->
+    <section id="info" class="info-section section">
+        <h2 class="section-title">営業情報</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <i class="fas fa-clock"></i>
+                <h3>営業時間</h3>
+                <p><strong>火・水・木・金・土曜日</strong><br>20:00 〜 0:00</p>
+                <p><strong>日・月曜日</strong><br>定休日</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>住所</h3>
+                <p>〒954-0111<br>新潟県見附市今町１丁目４−１６</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-utensils"></i>
+                <h3>サービス</h3>
+                <p>バーでの食事可<br>テイクアウト不可<br>完全禁煙</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 決済方法セクション -->
+    <section class="payment-section section">
+        <h2 class="section-title">お支払い方法</h2>
+        <div class="payment-methods">
+            <div class="payment-method">
+                <i class="fas fa-credit-card"></i>
+                <p>クレジットカード</p>
+            </div>
+            <div class="payment-method">
+                <i class="fas fa-mobile-alt"></i>
+                <p>PayPay</p>
+            </div>
+            <div class="payment-method">
+                <i class="fas fa-mobile-alt"></i>
+                <p>au PAY</p>
+            </div>
+            <div class="payment-method">
+                <i class="fas fa-mobile-alt"></i>
+                <p>楽天ペイ</p>
+            </div>
+            <div class="payment-method">
+                <i class="fas fa-mobile-alt"></i>
+                <p>d払い</p>
+            </div>
+            <div class="payment-method">
+                <i class="fas fa-money-bill-wave"></i>
+                <p>現金</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- アクセス・地図セクション -->
+    <section id="access" class="access-section section">
+        <h2 class="section-title">アクセス</h2>
+        <div class="access-content">
+            <div class="access-info">
+                <div class="access-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>住所</h3>
+                        <p>〒954-0111<br>新潟県見附市今町１丁目４−１６</p>
+                    </div>
+                </div>
+                <div class="access-item">
+                    <i class="fas fa-train"></i>
+                    <div>
+                        <h3>最寄り駅</h3>
+                        <p>JR信越本線 見附駅より徒歩約10分</p>
+                    </div>
+                </div>
+                <div class="access-item">
+                    <i class="fas fa-car"></i>
+                    <div>
+                        <h3>お車でお越しの場合</h3>
+                        <p>近隣にコインパーキングをご利用ください</p>
+                    </div>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.123456789012!2d138.882467815!3d37.526934279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zQkFS576O5bm4!5e0!3m2!1sja!2sjp!4v1640995200000!5m2!1sja!2sjp&q=BAR美幸+新潟県見附市今町1-4-16"
+                    width="100%" 
+                    height="400" 
+                    style="border:0; border-radius: 10px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <div class="map-fallback" style="text-align: center; margin-top: 1rem;">
+                    <p style="color: #d4af37; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                        <i class="fas fa-map-marker-alt" style="animation: pulse 2s infinite;"></i> 
+                        <strong>BAR美幸</strong> - 新潟県見附市今町1-4-16
+                    </p>
+                    <p style="color: #f4f4f4; font-size: 0.8rem;">
+                        地図が表示されない場合は、<a href="https://maps.google.com/?q=BAR美幸+新潟県見附市今町1-4-16" target="_blank" style="color: #d4af37; text-decoration: underline;">Google Mapsで開く</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- コンタクトセクション -->
+    <section id="contact" class="contact-section section">
+        <h2 class="section-title">お問い合わせ</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>0258-86-6804</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>〒954-0111 新潟県見附市今町１丁目４−１６</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <span>営業時間: 20:00 〜 0:00（火・水・木・金・土）</span>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <p>ご予約・お問い合わせはお電話にて承っております。<br>皆様のお越しを心よりお待ちしております。</p>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <p>&copy; 2024 BAR 美幸. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // モバイルメニューの開閉
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ヘッダーの背景をスクロール時に変更
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(0, 0, 0, 0.95)';
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.9)';
+            }
+        });
+
+        // ページ読み込み時のアニメーション
+        window.addEventListener('load', () => {
+            const heroContent = document.querySelector('.hero-content');
+            heroContent.style.animation = 'fadeInUp 1s ease-out';
+        });
+    </script>
+</body>
+</html>
